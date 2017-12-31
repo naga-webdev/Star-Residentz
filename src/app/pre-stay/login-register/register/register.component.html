@@ -1,3 +1,18 @@
-<p>
-  register works!
-</p>
+<br>
+<br>
+<br>
+<br>
+<h3>Reister Here</h3>
+<form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)" novalidate>
+  <mat-input-container floatPlaceholder="auto">
+    <input matInput formControlName="name" type="text" required placeholder="Name">
+  </mat-input-container>
+  <mat-input-container floatPlaceholder="auto">
+    <input matInput formControlName="email" type="text" required placeholder="Email">
+  </mat-input-container>
+  <mat-input-container floatPlaceholder="auto">
+    <input matInput formControlName="password" type="password" required placeholder="Password">
+  </mat-input-container>
+  <button color="primary" [disabled]="!registerForm.valid" mat-raised-button>Register</button>
+  <a class="footerlink" routerLink="/pre-stay/authentication/login" color="warn" mat-button>Login</a>
+</form>

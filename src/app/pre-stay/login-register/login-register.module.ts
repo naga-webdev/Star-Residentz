@@ -8,19 +8,25 @@ import { SharedModule } from '../../shared/shared.module';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    LoginRegisterRoutingModule
+    RouterModule,
+    ReactiveFormsModule,
+    // LoginRegisterRoutingModule
   ],
   declarations: [
     LoginComponent,
     LoginRegisterComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ProfileComponent
   ]
 })
 export class LoginRegisterModule { }

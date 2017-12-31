@@ -3,7 +3,7 @@
     "name": "Angular 5 Star Residentz PWA",
     "start_url": "/",
 
-    "theme_color": "#F48C5B",
+    "theme_color": "#3F51B5",
     "background_color": "#FFFFFF",
 
     "display": "standalone",
@@ -11,12 +11,12 @@
 
     "icons": [
         {
-            "src": "./assets/images/android/hotel_512.png",
+            "src": "./assets/images/shared-images/android/hotel_512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "./assets/images/android/hotel_192.png",
+            "src": "./assets/images/shared-images/android/hotel_192.png",
             "sizes": "192x192",
             "type": "image/png"
         }

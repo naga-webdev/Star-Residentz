@@ -1,12 +1,33 @@
-<div class="container">
-  <button class="loginBtn loginBtn--google">
-    <!-- <i class="fa fa-google-plus" aria-hidden="true"></i> -->
-    Login with Google
-  </button>
-  <br>
-  <button class="loginBtn loginBtn--facebook">
-    Login with Facebook
-  </button>
-  <br>
-  <a href="" mat-button color="accent">Register with us</a>
+<div *ngIf="authService.currentUserObservable | async; else showLogin">
+  <h1>Hello {{ authService.currentUser.displayName }}!</h1>
+  <button mat-raised-button color="warn" (click)="authService.signOut()">Logout</button>
 </div>
+<ng-template #showLogin>
+  <br>
+  <h3>Login</h3>
+  <div class="container">
+    <form class="loginform" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
+      <mat-input-container floatPlaceholder="auto">
+        <input matInput  formControlName="email" type="text" required placeholder="Email">
+      </mat-input-container>
+      <mat-input-container floatPlaceholder="auto">
+        <input matInput formControlName="password" type="password" required placeholder="Password">
+      </mat-input-container>
+      <br>
+      <button mat-raised-button color="accent" [disabled]="!loginForm.valid">Login</button>
+      <br>
+      <a mat-button color="warn" routerLink="/pre-stay/authentication/register">Register with us</a>
+    </form>
+    <div class="footer loginform">
+      <button mat-raised-button class="loginBtn loginBtn--google" (click)="authService.googleLogin()">
+        <!-- <i class="fa fa-google-plus" aria-hidden="true"></i> -->
+        Login with Google
+      </button>
+      <br>
+      <button mat-raised-button class class="loginBtn loginBtn--facebook">
+        Login with Facebook
+      </button>
+      <br>
+    </div>
+  </div>
+</ng-template>

@@ -15,6 +15,7 @@ body { padding: 2em; }
   border-radius: 0.2em;
   font-size: 16px;
   color: #FFF;
+  text-align: center;
 }
 .loginBtn:before {
   content: "";
@@ -63,4 +64,13 @@ body { padding: 2em; }
 .loginBtn--google:hover,
 .loginBtn--google:focus {
   background: #E74B37;
+}
+
+.loginform {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer{
+  margin-top: 250px;
 }
